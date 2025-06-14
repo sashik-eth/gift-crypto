@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useCreateWallet, usePrivy } from '@privy-io/react-auth';
+import { usePrivy } from '@privy-io/react-auth';
 import { useWindowSize } from 'react-use';
 import dynamic from 'next/dynamic';
 import { EmailVerification } from './EmailVerification';

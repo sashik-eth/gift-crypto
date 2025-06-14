@@ -3,10 +3,10 @@
 
 import { useState, useEffect } from 'react';
 import { usePrivy } from '@privy-io/react-auth';
-import { encodeFunctionData, Address, formatEther, decodeFunctionResult } from 'viem';
-import { LOCK_GIFT_ABI, LOCKER_CONTRACT_ADDRESS } from '@/utils/abi';
+import { Address, formatEther, decodeFunctionResult } from 'viem';
+import { LOCK_GIFT_ABI } from '@/utils/abi';
 import { useSmartWallets } from '@privy-io/react-auth/smart-wallets';
-import { apiClient, callRPC } from '@/repositories';
+import { apiClient } from '@/repositories';
 import { GiftCard } from './GiftCard';
 
 interface Gift {

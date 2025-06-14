@@ -1,12 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { ofetch } from 'ofetch';
 import { useFundWallet, usePrivy } from '@privy-io/react-auth';
 import { parseEther, encodeFunctionData, Address, formatEther } from 'viem';
 import { LOCK_GIFT_ABI, LOCKER_CONTRACT_ADDRESS } from '@/utils/abi';
 import { useSmartWallets } from '@privy-io/react-auth/smart-wallets';
-import { callRPC } from '@/utils/rpc';
 import { apiClient } from '@/repositories';
 
 interface GiftFormProps {
