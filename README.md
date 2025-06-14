@@ -24,12 +24,13 @@ cd crypto-gift
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Create a `.env.local` file in the root directory with the following variables:
 ```
 NEXT_PUBLIC_PRIVY_APP_ID=your-privy-app-id
+PRIVY_APP_SECRET=your-privy-app-secret
 TENDERLY_RPC_URL=your-tenderly-rpc-url
 TENDERLY_API_KEY=your-tenderly-api-key
 ```
@@ -37,7 +38,7 @@ TENDERLY_API_KEY=your-tenderly-api-key
 
 4. Start the development server:
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## Usage
