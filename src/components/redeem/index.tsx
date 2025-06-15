@@ -62,11 +62,13 @@ export default function Redeem() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4 py-8">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
       <div className="w-full max-w-3xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold mb-2">Redeem a Crypto Gift</h1>
+            <div className="flex items-center gap-4 py-2">
+              <h1 className="text-2xl sm:text-3xl font-bold">Redeem a Crypto Gift</h1>
+            </div>
             {user?.email?.address && (
               <p className="text-sm text-gray-600 mt-1">
                 Logged in as <span className="font-medium">{user.email.address}</span>

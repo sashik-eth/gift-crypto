@@ -54,13 +54,15 @@ export default function SendGift() {
   }
 
   return (
-    <div className="h-full min-h-screen w-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen w-full flex flex-col overflow-auto px-4 sm:px-6 lg:px-8 lg:items-center lg:justify-center py-8">
       <div className="w-full max-w-3xl">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold">
-              {giftData ? "Gift Created Successfully!" : "Create a Crypto Gift"}
-            </h1>
+            <div className="flex items-center gap-4 py-2">
+              <h1 className="text-2xl sm:text-3xl font-bold">
+                {giftData ? "Gift Created Successfully!" : "Create a Crypto Gift"}
+              </h1>
+            </div>
             {user?.email?.address && (
               <p className="text-sm text-gray-600 mt-1">
                 Logged in as <span className="font-medium">{user.email.address}</span>
