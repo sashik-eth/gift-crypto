@@ -54,42 +54,44 @@ export default function SendGift() {
   }
 
   return (
-    <div className="max-w-md mx-auto p-6">
-      <div className="flex justify-between items-center mb-8">
-        <div>
-          <h1 className="text-3xl font-bold">
-            {giftData ? "Gift Created Successfully!" : "Create a Crypto Gift"}
-          </h1>
-          {user?.email?.address && (
-            <p className="text-sm text-gray-600 mt-1">
-              Logged in as <span className="font-medium">{user.email.address}</span>
-            </p>
-          )}
+    <div className="h-full min-h-screen w-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-3xl">
+        <div className="flex justify-between items-center mb-8">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold">
+              {giftData ? "Gift Created Successfully!" : "Create a Crypto Gift"}
+            </h1>
+            {user?.email?.address && (
+              <p className="text-sm text-gray-600 mt-1">
+                Logged in as <span className="font-medium">{user.email.address}</span>
+              </p>
+            )}
+          </div>
+          <button
+            onClick={() => logout()}
+            className="px-3 sm:px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+          >
+            Logout
+          </button>
         </div>
-        <button
-          onClick={() => logout()}
-          className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        >
-          Logout
-        </button>
+        
+        {showConfetti && (
+          <ReactConfetti
+            width={width}
+            height={height}
+            numberOfPieces={500}
+            recycle={false}
+            gravity={0.3}
+            colors={['#4F46E5', '#818CF8', '#C7D2FE']} // Indigo color palette
+          />
+        )}
+        
+        {!giftData ? (
+          <GiftForm onSuccess={handleSuccess} />
+        ) : (
+          <GiftSuccess giftData={giftData} onReset={() => setGiftData(null)} />
+        )}
       </div>
-      
-      {showConfetti && (
-        <ReactConfetti
-          width={width}
-          height={height}
-          numberOfPieces={500}
-          recycle={false}
-          gravity={0.3}
-          colors={['#4F46E5', '#818CF8', '#C7D2FE']} // Indigo color palette
-        />
-      )}
-      
-      {!giftData ? (
-        <GiftForm onSuccess={handleSuccess} />
-      ) : (
-        <GiftSuccess giftData={giftData} onReset={() => setGiftData(null)} />
-      )}
     </div>
   );
 } 
